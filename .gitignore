@@ -1,3 +1,6 @@
+# binaries
+prlimit
+
 # Object files
 *.o
 *.ko
