@@ -1,5 +1,7 @@
 # binaries
 prlimit
+maccess
+maccess+
 
 # Object files
 *.o
