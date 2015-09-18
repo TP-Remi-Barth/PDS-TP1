@@ -41,7 +41,7 @@ clean:
 	rm *.o || true
 
 realclean: clean
-	rm exemple || true
+	rm prlimit maccess maccess+ || true
 
 ## Liste des pseudo-cibles
 #  Ces cibles ne correspondent pas à des fichiers que l'on veut créer,
