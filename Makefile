@@ -51,6 +51,8 @@ clean:
 realclean: clean
 	${RM} prlimit maccess maccess+
 
+test: maccess+ test.sh
+	./test.sh
 
 rendu: realclean ${RENDU_FILE}
 
