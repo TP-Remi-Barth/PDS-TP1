@@ -56,7 +56,7 @@ test: maccess+ test.sh
 
 rendu: realclean ${RENDU_FILE}
 
-${RENDU_FILE}: Makefile Readme prlimit.c maccess.c maccess+.c
+${RENDU_FILE}: Makefile Readme prlimit.c maccess.c maccess+.c test.sh
 	tar -czf ${RENDU_FILE} . --exclude='*.git*' --exclude='rendu'
 
 
