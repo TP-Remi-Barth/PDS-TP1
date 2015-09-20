@@ -1,5 +1,9 @@
 ### Modèle pour vos Makefile
 
+# Name of the archive without extension
+RENDU_NAME = tp1-bocquet-delemotte
+RENDU_FILE = rendu/${RENDU_NAME}.tar.gz
+
 ## Compilateur C et éditeur de liens
 CC      = gcc
 
@@ -12,6 +16,10 @@ CFLAGS += -g
 
 ## Options de l’édition de liens
 LDFLAGS  = -g
+
+# RM command
+RM = rm -vf
+
 
 ## Première cible
 #  « make » sans argument construit sa première cible
@@ -38,12 +46,19 @@ maccess+: maccess+.o
 
 
 clean:
-	rm *.o || true
+	${RM} *.o
 
 realclean: clean
-	rm prlimit maccess maccess+ || true
+	${RM} prlimit maccess maccess+
+
+
+rendu: realclean ${RENDU_FILE}
+
+${RENDU_FILE}: Makefile Readme prlimit.c maccess.c maccess+.c
+	tar -czf ${RENDU_FILE} . --exclude='*.git*' --exclude='rendu'
+
 
 ## Liste des pseudo-cibles
 #  Ces cibles ne correspondent pas à des fichiers que l'on veut créer,
 #  juste à des séquences que l'on veut pouvoir déclencher
-.PHONY: all clean realclean
+.PHONY: all clean realclean rendu
