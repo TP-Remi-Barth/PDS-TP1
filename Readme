@@ -9,6 +9,6 @@ Groupe 3
 2) Fait: on peut combiner les options, l'ordre n'est pas important.
   exemple: ./macess -r file -wv -x
 
-3)
+3) la commende 'make test' lance le script test.sh qui teste le programme maccess+.
 
 4) Fait
